@@ -1,7 +1,9 @@
-import 'package:Example_Adv_Material/buttons.dart';
-import 'package:Example_Adv_Material/input_text.dart';
 import 'package:adv_flutter_material/adv_button_view.dart';
 import 'package:flutter/material.dart';
+
+import 'buttons.dart';
+import 'input_text.dart';
+import 'texts.dart';
 
 void main() => runApp(MyApp());
 
@@ -54,6 +56,16 @@ class _MyHomePageState extends State<MyHomePage> {
               buttonType: ButtonType.SECONDARY,
               onPressed: () {
                 onButtonPressed(InputTextPage());
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Texts",
+              buttonType: ButtonType.PRIMARY,
+              onPressed: () {
+                onButtonPressed(TextsPage());
               },
             ),
           )
