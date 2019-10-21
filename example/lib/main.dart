@@ -1,3 +1,4 @@
+import 'package:adv_flutter_material/adv_button_view.dart';
 import 'package:adv_flutter_material/adv_input_text.dart';
 import 'package:flutter/material.dart';
 
@@ -8,11 +9,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Adv flutter demo app',
       theme: ThemeData(
         primarySwatch: Colors.cyan,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Adv flutter material Demo app'),
     );
   }
 }
@@ -37,6 +38,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Center(
+              child: AdvButton(
+                text: "Button",
+                buttonType: ButtonType.PRIMARY,
+                onPressed: () {},
+              ),
+            ),
+            Center(
+              child: AdvButton(
+                text: "Button",
+                buttonType: ButtonType.SECONDARY,
+                onPressed: () {},
+              ),
+            ),
             Container(
                 margin: const EdgeInsets.only(left: 16, right: 16),
                 child: AdvInputText(
