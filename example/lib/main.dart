@@ -1,5 +1,6 @@
+import 'package:Example_Adv_Material/buttons.dart';
+import 'package:Example_Adv_Material/input_text.dart';
 import 'package:adv_flutter_material/adv_button_view.dart';
-import 'package:adv_flutter_material/adv_input_text.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -34,35 +35,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: AdvButton(
-                text: "Button",
-                buttonType: ButtonType.PRIMARY,
-                onPressed: () {},
-              ),
+      body: ListView(
+        children: <Widget>[
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Buttons",
+              buttonType: ButtonType.PRIMARY,
+              onPressed: () {
+                onButtonPressed(ButtonsPage());
+              },
             ),
-            Center(
-              child: AdvButton(
-                text: "Button",
-                buttonType: ButtonType.SECONDARY,
-                onPressed: () {},
-              ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Input texts",
+              buttonType: ButtonType.SECONDARY,
+              onPressed: () {
+                onButtonPressed(InputTextPage());
+              },
             ),
-            Container(
-                margin: const EdgeInsets.only(left: 16, right: 16),
-                child: AdvInputText(
-                    hint: "Password", inputType: AdvInputType.PASSWORD)),
-            Container(
-              margin: const EdgeInsets.only(left: 16, right: 15, top: 16),
-              child: AdvInputText(hint: "Other", inputType: AdvInputType.TEXT),
-            ),
-          ],
-        ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+          )
+        ],
+      ),
     );
   }
+
+  onButtonPressed(StatefulWidget widget) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget));
+  }
+
+//  onButtonsPressed() {
+//    Navigator.of(context)
+//        .push(MaterialPageRoute(builder: (context) => ButtonsPage()));
+//  }
 }

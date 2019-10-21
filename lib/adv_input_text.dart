@@ -6,7 +6,10 @@ class AdvInputText extends StatefulWidget {
   final AdvInputType inputType;
   final String hint;
 
-  AdvInputText({Key key, @required this.hint, @required this.inputType})
+  AdvInputText(
+      {Key key,
+      @required this.hint,
+      @required this.inputType})
       : super(key: key);
 
   @override
