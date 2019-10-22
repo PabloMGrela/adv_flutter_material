@@ -19,6 +19,7 @@ class AdvText extends StatelessWidget {
     return Text(
       _text,
       style: getStyle(),
+      overflow: TextOverflow.ellipsis,
     );
   }
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'buttons.dart';
 import 'input_text.dart';
+import 'row.dart';
 import 'texts.dart';
 
 void main() => runApp(MyApp());
@@ -66,6 +67,16 @@ class _MyHomePageState extends State<MyHomePage> {
               buttonType: ButtonType.PRIMARY,
               onPressed: () {
                 onButtonPressed(TextsPage());
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Rows",
+              buttonType: ButtonType.SECONDARY,
+              onPressed: () {
+                onButtonPressed(RowPage());
               },
             ),
           )
