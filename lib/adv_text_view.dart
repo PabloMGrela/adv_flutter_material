@@ -19,32 +19,45 @@ class AdvText extends StatelessWidget {
     return Text(
       _text,
       style: getStyle(),
+      overflow: TextOverflow.ellipsis,
     );
   }
 
   getStyle() {
-    if (textStyle == AdvTextStyle.HEADING1) {
-      return TextStyle(
-          color: LibraryColors.primary,
-          fontSize: 40.0,
-          fontWeight: FontWeight.bold);
-    } else if (textStyle == AdvTextStyle.HEADING2) {
-      return TextStyle(color: LibraryColors.primary, fontSize: 30.0);
-    } else if (textStyle == AdvTextStyle.TITLE) {
-      return TextStyle(
-          color: LibraryColors.secondary,
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold);
-    } else if (textStyle == AdvTextStyle.BODY) {
-      return TextStyle(color: LibraryColors.fontGrey, fontSize: 14.0);
-    } else if (textStyle == AdvTextStyle.BODY_BOLD) {
-      return TextStyle(
-          color: LibraryColors.fontGrey,
-          fontSize: 14.0,
-          fontWeight: FontWeight.bold);
-    } else if (textStyle == AdvTextStyle.CAPTION) {
-      return TextStyle(
-          color: LibraryColors.primary, fontSize: 10.0, letterSpacing: 2.0);
+    LibraryColors libraryColors = new LibraryColors();
+    switch (textStyle) {
+      case AdvTextStyle.HEADING1:
+        return TextStyle(
+            color: libraryColors.getPrimaryColor(),
+            fontSize: 40.0,
+            fontWeight: FontWeight.bold);
+        break;
+      case AdvTextStyle.HEADING2:
+        return TextStyle(
+            color: libraryColors.getPrimaryColor(), fontSize: 30.0);
+        break;
+      case AdvTextStyle.BODY:
+        return TextStyle(color: libraryColors.getFontColor(), fontSize: 14.0);
+
+        break;
+      case AdvTextStyle.BODY_BOLD:
+        return TextStyle(
+            color: libraryColors.getFontColor(),
+            fontSize: 14.0,
+            fontWeight: FontWeight.bold);
+        break;
+      case AdvTextStyle.TITLE:
+        return TextStyle(
+            color: libraryColors.getSecondaryColor(),
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold);
+        break;
+      case AdvTextStyle.CAPTION:
+        return TextStyle(
+            color: libraryColors.getPrimaryColor(),
+            fontSize: 10.0,
+            letterSpacing: 2.0);
+        break;
     }
   }
 }

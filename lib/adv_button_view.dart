@@ -19,7 +19,7 @@ class AdvButton extends StatelessWidget {
       child: Text(
         text,
         maxLines: 1,
-        style: TextStyle(color: LibraryColors.white),
+        style: TextStyle(color: Colors.white),
       ),
       color: getColor(),
       onPressed: onPressed,
@@ -27,10 +27,11 @@ class AdvButton extends StatelessWidget {
   }
 
   getColor() {
+    LibraryColors libraryColors = new LibraryColors();
     if (buttonType == ButtonType.PRIMARY) {
-      return LibraryColors.primary;
+      return libraryColors.getPrimaryColor();
     } else
-      return LibraryColors.tertiary;
+      return libraryColors.getTertiaryColor();
   }
 }
 
