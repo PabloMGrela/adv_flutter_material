@@ -12,7 +12,7 @@ Develop to make your life easier.
 
 Using AdvButton you can easily create a material button. 
 
-AdvButton(text: "Button text", buttonType: ButtonType.PRIMARY, onPressed: (){});
+``AdvButton(text: "Button text", buttonType: ButtonType.PRIMARY, onPressed: (){});``
 
 Fields:
   
@@ -26,7 +26,7 @@ Fields:
 
 Using AdvCardView you'll create a Card with image obtained from network, title and subtitle.
 
-AdvCardView(title: "Title", subtitle: "subtitle", imageUrl: "mockUrl.png", onPressed: (){});
+``AdvCardView(title: "Title", subtitle: "subtitle", imageUrl: "mockUrl.png", onPressed: (){});``
 
 Fields:
 
@@ -39,7 +39,7 @@ Fields:
 
 Using AdvInputText you'll be able to create an input text quickly.
 
-AdvInputText(hint: "Hint", inputType: InputType.NUMBER);
+``AdvInputText(hint: "Hint", inputType: InputType.NUMBER);``
 
 Fields:
 
@@ -54,7 +54,7 @@ Fields:
 
 Using AdvText you'll standarize your texts styles among your app.
 
-AdvText(text: "Hello World", textStyle: AdvTextStyle.HEADING1);
+``AdvText(text: "Hello World", textStyle: AdvTextStyle.HEADING1);``
 
 Fields:
 
