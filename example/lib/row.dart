@@ -59,9 +59,7 @@ class _RowPageState extends State<RowPage> {
                   title: "Single row with checkbox",
                   icon: null,
                   checkBoxState: checkBoxState,
-                  onPressed: () {
-                    checkBoxState = !checkBoxState;
-                  },
+                  onPressed: () {},
                 ),
               ),
             ],

@@ -37,31 +37,30 @@ class AdvSingleRowState extends State<AdvSingleRow> {
     if (checkBoxState != null) {
       leftMargin = 8.0;
       rightMargin = 0.0;
-      topBottomMargin = 4.0;
+      topBottomMargin = 2.0;
     }
-    return Card(
-        elevation: 8.0,
-        child: Material(
-            child: InkWell(
-                onTap: onPressed,
-                child: Container(
-                    margin: EdgeInsets.fromLTRB(leftMargin, topBottomMargin,
-                        rightMargin, topBottomMargin),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: () sync* {
-                        yield AdvText(
-                            text: title, textStyle: AdvTextStyle.BODY_BOLD);
-                        if (icon != null) {
-                          yield Icon(icon);
-                        }
-                        if (checkBoxState != null) {
-                          yield AdvCheckbox(
-                            isChecked: checkBoxState,
-                          );
-                        }
-                      }()
-                          .toList(),
-                    )))));
+    AdvCheckbox checkbox = AdvCheckbox(
+      isChecked: checkBoxState,
+    );
+    return Material(
+        child: InkWell(
+            onTap: onPressed,
+            child: Container(
+                margin: EdgeInsets.fromLTRB(
+                    leftMargin, topBottomMargin, rightMargin, topBottomMargin),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: () sync* {
+                    yield AdvText(
+                        text: title, textStyle: AdvTextStyle.BODY_BOLD);
+                    if (icon != null) {
+                      yield Icon(icon);
+                    }
+                    if (checkBoxState != null) {
+                      yield checkbox;
+                    }
+                  }()
+                      .toList(),
+                ))));
   }
 }
