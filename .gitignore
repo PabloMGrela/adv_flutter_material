@@ -153,5 +153,3 @@ macos/Flutter/ephemeral/flutter_export_environment.sh
 macos/Flutter/ephemeral/FlutterInputs.xcfilelist
 macos/Flutter/ephemeral/FlutterOutputs.xcfilelist
 test/widget_test.dart
-example/ios/Flutter/Debug.xcconfig
-example/ios/Flutter/Release.xcconfig
