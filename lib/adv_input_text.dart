@@ -6,10 +6,7 @@ class AdvInputText extends StatefulWidget {
   final AdvInputType inputType;
   final String hint;
 
-  AdvInputText(
-      {Key key,
-      @required this.hint,
-      @required this.inputType})
+  AdvInputText({Key key, @required this.hint, @required this.inputType})
       : super(key: key);
 
   @override
@@ -32,14 +29,19 @@ class AdvInputTextState extends State<AdvInputText> {
   }
 
   getKeyboardType() {
-    if (inputType == AdvInputType.NUMBER) {
-      return TextInputType.numberWithOptions();
-    } else if (inputType == AdvInputType.MAIL) {
-      return TextInputType.emailAddress;
-    } else if (inputType == AdvInputType.TEXT) {
-      return TextInputType.text;
-    } else if (inputType == AdvInputType.PASSWORD) {
-      return TextInputType.visiblePassword;
+    switch (inputType) {
+      case AdvInputType.NUMBER:
+        return TextInputType.numberWithOptions();
+        break;
+      case AdvInputType.MAIL:
+        return TextInputType.emailAddress;
+        break;
+      case AdvInputType.TEXT:
+        return TextInputType.text;
+        break;
+      case AdvInputType.PASSWORD:
+        return TextInputType.visiblePassword;
+        break;
     }
   }
 
