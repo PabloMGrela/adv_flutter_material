@@ -1,4 +1,3 @@
-import 'package:adv_flutter_material/adv_image_card_view.dart';
 import 'package:adv_flutter_material/rows/adv_single_line_row.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,53 +16,33 @@ class _RowPageState extends State<RowPage> {
 
   @override
   Widget build(BuildContext context) {
-    var checkBoxState = false;
+    final key = new GlobalKey<ScaffoldState>();
     return Scaffold(
+        key: key,
         appBar: AppBar(
           title: Text("Row"),
         ),
-        body: Center(
-          child: ListView(
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(left: 16.0, right: 16.0),
-                child: AdvCardView(
-                  title: "This is a nice title",
-                  subtitle:
-                      "And this is de description subtitle example long long looooooooooooooooooooooong",
-                  imageUrl:
-                      "https://www.mindinventory.com/blog/wp-content/uploads/2019/06/flutter-pros-cons-1200x500.png",
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 16.0, right: 16.0),
-                child: AdvSingleRow(
-                  title: "Single row with icon",
-                  icon: Icons.access_alarm,
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 16.0, right: 16.0),
-                child: AdvSingleRow(
-                  title: "Single row without icon",
-                  icon: null,
-                  checkBoxState: null,
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 16.0, right: 16.0),
-                child: AdvSingleRow(
-                  title: "Single row with checkbox",
-                  icon: null,
-                  checkBoxState: checkBoxState,
-                  onPressed: () {},
-                ),
-              ),
-            ],
-          ),
+        body: ListView(
+          children: <Widget>[
+            AdvSingleRow(
+              title: "Row 1",
+              icon: null,
+              onPressed: () {
+                key.currentState.showSnackBar(new SnackBar(
+                  content: new Text("Row 1 pressed"),
+                ));
+              },
+            ),
+            AdvSingleRow(
+              title: "With icon",
+              icon: Icon(Icons.email),
+              onPressed: () {
+                key.currentState.showSnackBar(new SnackBar(
+                  content: new Text("Row with icon pressed"),
+                ));
+              },
+            ),
+          ],
         ));
   }
 }
