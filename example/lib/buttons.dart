@@ -36,6 +36,14 @@ class _ButtonsPageState extends State<ButtonsPage> {
                   buttonType: ButtonType.SECONDARY,
                   onPressed: () {},
                 ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 16.0, right: 16.0),
+                child: AdvButton(
+                  text: "Outlined button",
+                  buttonType: ButtonType.OUTLINED,
+                  onPressed: () {},
+                ),
               )
             ],
           ),

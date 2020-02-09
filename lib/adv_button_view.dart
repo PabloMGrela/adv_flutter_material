@@ -15,15 +15,25 @@ class AdvButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      child: Text(
-        text,
-        maxLines: 1,
-        style: TextStyle(color: LibraryColors.white),
-      ),
-      color: getColor(),
-      onPressed: onPressed,
-    );
+    if (buttonType == ButtonType.OUTLINED) {
+      return OutlineButton(
+        onPressed: onPressed,
+        child: Text(
+          text,
+          maxLines: 1,
+          style: TextStyle(color: LibraryColors.primary),
+        ),
+      );
+    } else
+      return RaisedButton(
+        child: Text(
+          text,
+          maxLines: 1,
+          style: TextStyle(color: LibraryColors.white),
+        ),
+        color: getColor(),
+        onPressed: onPressed,
+      );
   }
 
   getColor() {
@@ -34,4 +44,4 @@ class AdvButton extends StatelessWidget {
   }
 }
 
-enum ButtonType { PRIMARY, SECONDARY }
+enum ButtonType { PRIMARY, SECONDARY, OUTLINED }

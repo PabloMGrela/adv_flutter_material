@@ -1,4 +1,7 @@
 import 'package:adv_flutter_material/adv_button_view.dart';
+import 'package:example_adv_material/cards.dart';
+import 'package:example_adv_material/carousel.dart';
+import 'package:example_adv_material/chips.dart';
 import 'package:flutter/material.dart';
 
 import 'buttons.dart';
@@ -64,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(left: 16.0, right: 16.0),
             child: AdvButton(
               text: "Texts",
-              buttonType: ButtonType.PRIMARY,
+              buttonType: ButtonType.OUTLINED,
               onPressed: () {
                 onButtonPressed(TextsPage());
               },
@@ -74,12 +77,32 @@ class _MyHomePageState extends State<MyHomePage> {
             margin: EdgeInsets.only(left: 16.0, right: 16.0),
             child: AdvButton(
               text: "Rows",
-              buttonType: ButtonType.SECONDARY,
+              buttonType: ButtonType.PRIMARY,
               onPressed: () {
                 onButtonPressed(RowPage());
               },
             ),
-          )
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Chips",
+              buttonType: ButtonType.SECONDARY,
+              onPressed: () {
+                onButtonPressed(ChipsPage());
+              },
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 16.0, right: 16.0),
+            child: AdvButton(
+              text: "Cards",
+              buttonType: ButtonType.OUTLINED,
+              onPressed: () {
+                onButtonPressed(CardsPage());
+              },
+            ),
+          ),
         ],
       ),
     );
